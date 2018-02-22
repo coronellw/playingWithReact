@@ -27,14 +27,14 @@ module.exports = {
 
 			},
 			{
-				test: /\.css$/,
+				test: /\.json$/,
 				exclude: /(node-modules)/,
 				use: {
 					loader: "json-loader"
 				}
 			},
 			{
-				test: /\.json$/,
+				test: /\.css$/,
 				exclude: /(node-modules)/,
 				loader: 'style-loader!css-loader!autoprefixer-loader'
 			},

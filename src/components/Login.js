@@ -1,21 +1,32 @@
 import React from 'react'
+import { Button, Form, ControlLabel, FormControl } from 'react-bootstrap'
 
-export const Login = ({username,password}) => {
-	return(
-		<div id="login">
-			<h1>Test</h1>
-			<p>This text is comming from Login.js</p>
+class Login extends React.Component {
 
-			<label>Username: </label>
-			<input type="text" defaultValue={username} />
+	constructor(props) {
+		super(props)
+		this.state = {
+			username: 'wcoronell',
+			password: 'secret'
+		}
+	}
 
-			<label>Password: </label>
-			<input type="password" defaultValue={password} />
-		</div>
-	)
+	render(){
+		return(
+			<div id="login-wrapper">
+				<form>
+					<ControlLabel>Username:</ControlLabel>
+					<FormControl type="text" defaultValue={this.state.username}></FormControl>
+
+					<ControlLabel>Password:</ControlLabel>
+					<FormControl type="password" defaultValue={this.state.password}></FormControl>
+
+					<Button bsStyle="success">Log me in</Button>
+					<Button bsStyle="danger">Cancel</Button>
+				</form>
+			</div>
+		)
+	}
 }
 
-Login.defaultProps = {
-	username: "wcoronell",
-	password: "secret"
-}
+export default Login
